@@ -9,7 +9,7 @@ Different APIs for a blog website creation.
 
 1.Firstly, install all the dependencies for backend with the command:
   ### `npm install`
-2.Install MongoDB, and start the server on the port 27017.
+2.Install MongoDB, and start the mongo client on the port 27017.
 
 3.Then, make sure the local port 9999 are available in your pc, then run the command for both as:
   ### `npm start`
