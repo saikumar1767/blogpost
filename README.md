@@ -1,5 +1,5 @@
 # BLOG POST
-Different APIs for a blog website.
+Different APIs for a blog website creation.
 
 ## Technology stack:
  - MongoDB for database storage(mongoose odm).
