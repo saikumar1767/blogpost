@@ -11,9 +11,9 @@ Different APIs for a blog website creation.
   ### `npm install`
 2.Install MongoDB, and start the server on the port 27017.
 
-3.Then, make sure the local port 9997 are available in your pc, then run the command for both as:
+3.Then, make sure the local port 9999 are available in your pc, then run the command for both as:
   ### `npm start`
-Note: The End port 9997 is for hosting backend and clone down this repository. You will need `node` and `npm` installed globally on your machine.
+Note: The End port 9999 is for hosting backend and clone down this repository. You will need `node` and `npm` installed globally on your machine.
 
 ## Different API Requests served are:
   - User Login and signup
