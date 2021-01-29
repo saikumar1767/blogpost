@@ -137,9 +137,9 @@ app.get("/blogpost/:bid", AuthMiddleware, async (req, res) => {
 //Create a new blog post - server receives title and content
 app.post("/createblog", AuthMiddleware, async (req, res) => {
     const blog = req.body;
-    const user = await userModel.findOne({ _id: req.body.userId });
+    const user = await userModel.findOne({ _id: req.session.userId });
     blog.author = user.userName;
-    blog.userId = req.body.userId;
+    blog.userId = req.session.userId;
     const newblog = new blogModel(blog);
     await newblog.save();
     res.status(201).send(newblog);
@@ -151,7 +151,7 @@ app.put("/blogpost/:bid", AuthMiddleware, async (req, res) => {
   const blogId = req.params.bid;
 
   try {
-    const blogpost = await blogModel.findOne({ _id: blogId, userId: req.body.userId });
+    const blogpost = await blogModel.findOne({ _id: blogId, userId: req.session.userId });
     if (isNullOrUndefined(blogpost)) {
       res.sendStatus(401);
     } else {
@@ -173,8 +173,8 @@ app.delete("/blogpost/:bid", AuthMiddleware, async (req, res) => {
   const bid = req.params.bid;
 
   try {
-    const blogpost = await blogModel.findOne({ _id: bid, userId: req.body.userId });
-    const admin = await userModel.findOne({ _id: req.body.userId });
+    const blogpost = await blogModel.findOne({ _id: bid, userId: req.session.userId });
+    const admin = await userModel.findOne({ _id: req.session.userId });
     if (isNullOrUndefined(blogpost) && admin.isAdmin === false) {
       res.sendStatus(401);
     }
