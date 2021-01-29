@@ -26,7 +26,7 @@ Note: The End port 9999 is for hosting backend and clone down this repository. Y
   - Get the filtered list of posts (filter by title)
 
 (Back-End Database)
-   - Here, MongoDB database is used to store the data and the database name used is 'blog post'.
+   - Here, MongoDB database is used to store the data and the database name used is 'blogs'.
    - In the database, two collections are created namely:
      - blogs,
      - users
